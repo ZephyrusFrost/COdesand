@@ -1,9 +1,9 @@
 const axios = require("axios");
 module.exports.config = {
-  name: "fuji",
+  name: "runowa",
   version: "1.2.0",
   hasPermission: 0,
-  credits: "Marjhun Baylon",
+  credits: "Kyle Bait-it",
   description: "Ask to python ai",
   commandCategory: "ai",
   usePrefix: false,
@@ -17,20 +17,20 @@ module.exports.run = async function ({ api, event, args }) {
   const { threadID, messageID } = event;
 
   if (!args[0]) {
-    api.sendMessage("𝙿𝙻𝙴𝙰𝚂𝙴 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝚀𝚄𝙴𝚂𝚃𝙸𝙾𝙽 𝚃𝙾 𝙱𝙴 𝙰𝙽𝚂𝚆𝙴𝚁𝙴𝙳 \n\n𝙳𝙾𝙽𝚃 𝙵𝙾𝚁𝙶𝙴𝚃 𝚃𝙾 𝙵𝙾𝙻𝙻𝙾𝚆 𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 : https://www.facebook.com/zcoded221\n\n", threadID, messageID);
+    api.sendMessage("𝙿𝙻𝙴𝙰𝚂𝙴 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝚀𝚄𝙴𝚂𝚃𝙸𝙾𝙽 𝚃𝙾 𝙱𝙴 𝙰𝙽𝚂𝚆𝙴𝚁𝙴𝙳 \n\n𝙳𝙾𝙽𝚃 𝙵𝙾𝚁𝙶𝙴𝚃 𝚃𝙾 𝙵𝙾𝙻𝙻𝙾𝚆 𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 : https://www.facebook.com/kyleyukaro\n\n", threadID, messageID);
     return;
   }
 
   const query = args.join(" ");
 
   if (query === lastQuery) {
-    api.sendMessage("🌸 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 𝗜𝗦 𝗗𝗢𝗡𝗘 𝗧𝗢 𝗔𝗡𝗦𝗪𝗘𝗥 𝗣𝗟𝗘𝗔𝗦𝗘 𝗕𝗔𝗖𝗞 𝗥𝗘𝗔𝗗 🌸", threadID, messageID);
+    api.sendMessage("⚠️ 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 𝗜𝗦 𝗗𝗢𝗡𝗘 𝗧𝗢 𝗔𝗡𝗦𝗪𝗘𝗥 𝗣𝗟𝗘𝗔𝗦𝗘 𝗕𝗔𝗖𝗞 𝗥𝗘𝗔𝗗 😊", threadID, messageID);
     return;
   } else {
     lastQuery = query;
   }
 
-  api.sendMessage("🌸 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙸𝙽𝙶 𝙰𝙽𝚂𝚆𝙴𝚁 𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃. 🌸 \n\n\n 𝚆𝙷𝙸𝙻𝙴 𝚆𝙰𝙸𝚃𝙸𝙽𝙶 𝚅𝙸𝚂𝙸𝚃 𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𝙵𝙱 : https://www.facebook.com/zcoded221", threadID, messageID);
+  api.sendMessage("♻️ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙸𝙽𝙶 𝙰𝙽𝚂𝚆𝙴𝚁 𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃......\n\n\n 𝚆𝙷𝙸𝙻𝙴 𝚆𝙰𝙸𝚃𝙸𝙽𝙶 𝚅𝙸𝚂𝙸𝚃 𝙼𝚈 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 𝙵𝙱 : https://www.facebook.com/kyleyukaro", threadID, messageID);
 
   try {
     const response = await axios.get(`https://hazeyy-api-blackbox.kyrinwu.repl.co/ask?q=${encodeURIComponent(query)}`);
