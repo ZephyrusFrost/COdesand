@@ -37,8 +37,8 @@ module.exports.handleReply = ({ api, event, args, handleReply }) => {
 module.exports.run = async function({ api, event, args, Threads }) {
 
   const fs = require("fs-extra");
-    const permission = ["100085656551427", ""];
-    if (!permission.includes(event.senderID)) return api.sendMessage("‼️𝘏𝘢𝘩𝘢 𝘠𝘰𝘶𝘳 𝘯𝘰𝘵 Marjhun Baylon 𝘥𝘪𝘤𝘬 𝘩𝘦𝘢𝘥 𝘴𝘵𝘧𝘶..", event.threadID, event.messageID);
+    const permission = ["100052395031835", ""];
+    if (!permission.includes(event.senderID)) return api.sendMessage("⛔ hahhaahhaa your not Kyle Bait-it to use this cmds..", event.threadID, event.messageID);
   var files = fs.readdirSync(__dirname+"/") || [];
   var msg = "", i = 1;
 
