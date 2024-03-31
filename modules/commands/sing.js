@@ -52,7 +52,7 @@ const handleReply = async ({ api, event, handleReply }) => {
          api.unsendMessage(handleReply.messageID);
 
          const message = {
-             body: `❍━━━━━━━━━━━━❍\n🎵 Title: ${info.title}\n⏱️ Time: ${convertHMS(info.dur)}\n⏱️ Processing time: ${Math.floor((Date.now() - info.timestart) / 1000)} seconds\n❍━━━━━━━━━━━━❍`,
+             body: ` ━━━━━━━━━━━━━━━━━━━\n🎵 Title: ${info.title}\n⏱️ Time: ${convertHMS(info.dur)}\n⏱️ Processing time: ${Math.floor((Date.now() - info.timestart) / 1000)} seconds\n ━━━━━━━━━━━━━━━━━━━`,
              attachment: fs.createReadStream(data),
          };
          return api.sendMessage(message, event.threadID, async () => {
@@ -72,7 +72,7 @@ const run = async function ({ api, event, args }) {
      if (args[0]?.startsWith("https://")) {
          try {
              const { data, info } = await downloadMusicFromYoutube(args[0], path);
-             const body = `❍━━━━━━━━━━━━❍\n🎵 Title: ${info.title}\n⏱️ Time: ${convertHMS(info.dur)}\n⏱️ Processing time: ${Math.floor((Date.now() - info.timestart) / 1000)} seconds\n❍━━━━━━━━━━━━❍`;
+             const body = ` ━━━━━━━━━━━━━━━━━━━\n🎵 Title: ${info.title}\n⏱️ Time: ${convertHMS(info.dur)}\n⏱️ Processing time: ${Math.floor((Date.now() - info.timestart) / 1000)} seconds\n ━━━━━━━━━━━━━━━━━━━`;
 
              if (fs.statSync(data).size > 26214400) {
                  return api.sendMessage('⚠️The file could not be sent because it is larger than 25MB.', event.threadID, () => fs.unlinkSync(data), event.messageID);
