@@ -6,7 +6,7 @@ module.exports.config = {
   name: 'owner',
   version: '1.0.0',
   hasPermssion: 0,
-  credits: 'Marjhun Baylon',
+  credits: 'Kyle Bait-it',
   usePrefix: false,
   description: 'Display bot owner information',
   commandCategory: 'system',
@@ -19,10 +19,10 @@ module.exports.run = async ({ api, event }) => {
     const ownerInfo = {
       name: `${global.config.BOTOWNER}`,
       gender: 'MALE',
-      age: '17',
-      height: '5,4',
+      age: '19',
+      height: 'secret',
       facebookLink: `${global.config.OWNERLINK}`,
-      status: 'SINGLE'
+      status: 'have a girlfriend rn.'
     };
 
     const videoUrl =  
@@ -40,14 +40,13 @@ module.exports.run = async ({ api, event }) => {
     fs.writeFileSync(videoPath, Buffer.from(videoResponse.data, 'binary'));
 
     const response = `
-✧ 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 ✧\n✿━━━━━━━━━━━━✿
-  NAME: ${ownerInfo.name}\n✿━━━━━━━━━━━━✿
-  GENDER: ${ownerInfo.gender}\n✿━━━━━━━━━━━━✿
-AGE: ${ownerInfo.age}\n✿━━━━━━━━━━━━✿
-HEIGHT: ${ownerInfo.height}\n✿━━━━━━━━━━━━✿
-FACEBOOK: ${ownerInfo.facebookLink}\n✿━━━━━━━━━━━━✿
-STATUS: ${ownerInfo.status}\n✿━━━━━━━━━━━━✿
-`;
+⚜️ 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗧𝗜𝗢𝗡 📜\n━━━━━━━━━━━━
+  NAME: ${ownerInfo.name}\n
+  GENDER: ${ownerInfo.gender}\n
+AGE: ${ownerInfo.age}\n
+HEIGHT: ${ownerInfo.height}\n
+FACEBOOK: ${ownerInfo.facebookLink}\n
+STATUS: ${ownerInfo.status}\n━━━━━━━━━━━━`;
 
 
     await api.sendMessage({
@@ -56,7 +55,7 @@ STATUS: ${ownerInfo.status}\n✿━━━━━━━━━━━━✿
     }, event.threadID, event.messageID);
 
     if (event.body.toLowerCase().includes('ownerinfo')) {
-      api.setMessageReaction('😽', event.messageID, (err) => {}, true);
+      api.setMessageReaction('😳', event.messageID, (err) => {}, true);
     }
   } catch (error) {
     console.error('Error in ownerinfo command:', error);
