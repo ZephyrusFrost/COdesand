@@ -2,7 +2,7 @@ module.exports.config = {
  name: "uid",
  version: "1.0.0",
  permission: 0,
- credits: "Marjhun Baylon",
+ credits: "Kyle Bait-it",
  usePrefix: false,
  description: "get user id.",
  commandCategory: "without prefix",
