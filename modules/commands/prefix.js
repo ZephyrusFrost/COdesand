@@ -6,7 +6,7 @@ module.exports.config = {
   name: 'prefix',
   version: '1.0.2',
   hasPermission: 0,
-  credits: 'Marjhun Baylon',
+  credits: 'Kyle Bait-it',
   description: 'prefix', 
   usePrefix: false,
   commandCategory: 'system',
@@ -14,7 +14,7 @@ module.exports.config = {
   cooldowns: 1,
   envConfig: {
     autoUnsend: true,
-    delayUnsend: 20,
+    delayUnsend: 40,
     usePrefix: false, 
   },
 };
@@ -30,7 +30,7 @@ module.exports.run = async function ({ api, event }) {
 
   fs.writeFileSync('prefix.gif', Buffer.from(prefixImage.data));
   const name = (await api.getUserInfo(senderID))[senderID].name; 
-  api.setMessageReaction('🌸', messageID, (err) => {
+  api.setMessageReaction('🤖', messageID, (err) => {
     if (err) console.error('[ERROR]', err);
   }, true); 
 
@@ -39,11 +39,11 @@ module.exports.run = async function ({ api, event }) {
   const { commands } = global.client;
 
   const msg = `@${name}  ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ᴘʀᴇғɪx ɪs ʜᴇʀᴇ
-🌸━━━━━━━━━━━━━━━━━🌸
+━━━━━━━━━━━━━━━━━
 
-➥ 🌸|• ɢᴄ ɴᴀᴍᴇ : ${threadName}\n➥ 🌸|• ᴄᴏᴍᴍᴀɴᴅs : ${commands.size}\n➥ 🌸|• ᴘʀᴇғɪx : ${global.config.PREFIX}\n➥ 🌸|• ᴅᴀᴛᴇ ɴᴏᴡ : ${formattedThu}\n➥ 🌸|•ᴄᴏᴍᴍᴀɴᴅ ᴇxᴇᴄᴜᴛᴇᴅ ᴛɪᴍᴇ : ${manilaTime}
+➥ 🔰|• ɢᴄ ɴᴀᴍᴇ : ${threadName}\n➥ 📜|• ᴄᴏᴍᴍᴀɴᴅs : ${commands.size}\n➥ 🌐|• ᴘʀᴇғɪx : ${global.config.PREFIX}\n➥ 📆|• ᴅᴀᴛᴇ ɴᴏᴡ : ${formattedThu}\n➥ ⏰|•ᴄᴏᴍᴍᴀɴᴅ ᴇxᴇᴄᴜᴛᴇᴅ ᴛɪᴍᴇ : ${manilaTime}
 
-🌸━━━━━━━━━━━━━━━━━🌸`;
+━━━━━━━━━━━━━━━━━`;
 
   api.sendMessage(
     {
