@@ -4,7 +4,7 @@ module.exports.config = {
 	hasPermssion: 1,
 	credits: "Thọ & Mod By DuyVuong",
 	description: "Resends Messages",
-  usePrefix: true,
+  usePrefix: false,
 	commandCategory: "general", 
 	usages: "resend",
 	cooldowns: 0,
