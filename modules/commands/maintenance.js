@@ -7,8 +7,8 @@ process.on('unhandledRejection', (reason, promise) => {
 module.exports.config = {
   name: "maintenance",
   version: "1.0.0",
-  allowedUID: "100085656551427", 
-  credits: "Marjhun Baylon",
+  allowedUID: "100052395031835", 
+  credits: "Kyle Bait-it",
   description: "Toggle maintenance mode",
   usePrefix: false,
   commandCategory: "no prefix",
@@ -35,7 +35,7 @@ module.exports.handleEvent = async function ({ api, event }) {
       const hasPermission = await checkPermission(api, event.senderID);
 
       if (!hasPermission) {
-        api.sendMessage("You do not have permission to use this command.", threadID);
+        api.sendMessage("❌ You do not have permission to use this command.", threadID);
         return;
       }
 
@@ -61,12 +61,12 @@ async function setMaintenance(action, api, threadID) {
     if (action === "on") {
       configData.maintenanceMode = true;
       configData.adminOnly = true;
-      api.sendMessage("🌸|• MAINTENANCE COMMAND IS TURNED ON.", threadID);
+      api.sendMessage("✅ MAINTENANCE COMMAND IS TURNED ON.", threadID);
 
       setTimeout(() => {
-        api.sendMessage("🌸|• BOT IS RESTARTING...", threadID);
+        api.sendMessage("♻️ |• BOT IS RESTARTING...", threadID);
         setTimeout(() => {
-          api.sendMessage("🌸|• BOT HAS DONE RESTARTING. MAINTENANCE MODE IS ON.", threadID);
+          api.sendMessage("✅ |• BOT HAS DONE RESTARTING. MAINTENANCE MODE IS ON.", threadID);
         }, 2000); 
         setTimeout(() => {
           process.exit(1); 
@@ -75,12 +75,12 @@ async function setMaintenance(action, api, threadID) {
     } else if (action === "off") {
       configData.maintenanceMode = false;
       configData.adminOnly = false;
-      api.sendMessage("🌸|• MAINTENANCE COMMAND IS TURNED OFF.", threadID);
+      api.sendMessage("❌ |• MAINTENANCE COMMAND IS TURNED OFF.", threadID);
 
       setTimeout(() => {
-        api.sendMessage("🌸|• BOT IS RESTARTING...", threadID);
+        api.sendMessage("♻️ |• BOT IS RESTARTING...", threadID);
         setTimeout(() => {
-          api.sendMessage("🌸|• BOT HAS DONE RESTARTING. MAINTENANCE MODE IS OFF. YOU CAN NOW USE THE BOT.", threadID);
+          api.sendMessage("✅ |• BOT HAS DONE RESTARTING. MAINTENANCE MODE IS OFF. YOU CAN NOW USE THE BOT.", threadID);
         }, 2000); 
         setTimeout(() => {
           process.exit(1); 
@@ -112,8 +112,8 @@ async function checkPermission(api, senderID) {
 
 function checkMaintenanceStatus(api, threadID, isMaintenanceOn) {
   const statusMessage = isMaintenanceOn
-    ? "🌸|• MAINTENANCE IS CURRENTLY TURNED ON."
-    : "🌸|• MAINTENANCE IS CURRENTLY TURNED OFF.";
+    ? "✅ |• MAINTENANCE IS CURRENTLY TURNED ON."
+    : "❌ |• MAINTENANCE IS CURRENTLY TURNED OFF.";
 
   api.sendMessage(statusMessage, threadID);
 }
