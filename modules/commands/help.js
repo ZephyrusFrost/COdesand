@@ -2,15 +2,16 @@ module.exports.config = {
     name: "help",
     version: "1.0.2",
     hasPermssion: 0,
-    credits: "Marjhun Baylon",
+    credits: "Kyle Bait-it",
     description: "Beginner's Guide",
     commandCategory: "system",
     usages: "[Name module]",
     usePrefix: false,
     cooldowns: 5,
     envConfig: {
-        autoUnsend: false,
-        delayUnsend: 5000
+        autoUnsend: true,
+        delayUnsend: 400
+
     }
 };
 
@@ -23,7 +24,7 @@ module.exports.languages = {
         "adminBot": "Quản trị viên bot"
     },
     "en": {
-        "moduleInfo": "✿━━━━✿ %1 ✿━━━━✿\n\n%2\n\n\n☄️ ➥ Usage: %3\n🌄 ➥ Category: %4\n💫 ➥ Waiting time: %5 seconds(s)\n⚡ ➥ Permission: %6\n🌈 ➥ Command Created by : %7 ",
+        "moduleInfo": "━━━━ %1 ━━━━\n\n%2\n\n\n☄ ➥ Usage: %3\n ➥ Category: %4\n ➥ Waiting time: %5 seconds(s)\n ➥ Permission: %6\n ➥ Command Created by : %7 ",
         "helpList": '[ There are %1 commands on this bot, Use: "%2help nameCommand" to know how to use! ]',
         "user": "User",
         "adminGroup": "Admin group",
@@ -71,10 +72,10 @@ module.exports. run = function({ api, event, args, getText }) {
     i = startSlice;
     const returnArray = arrayInfo.slice(startSlice, startSlice + numberOfOnePage);
 
-    for (let item of returnArray) msg += ` 🎀 ➥  ${item}\n`;
+    for (let item of returnArray) msg += ` ❍ ➥  『${item}』\n`;
 
-    const text = `🌸 •|•   [ 𝑷𝑨𝑮𝑬 (${page}/${Math.ceil(arrayInfo.length/numberOfOnePage)}) ]\n\n🌘 •|•   [ 𝑪𝑼𝑹𝑹𝑬𝑵𝑻𝑳𝒀 𝑨𝑽𝑨𝑰𝑳𝑨𝑩𝑳𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫 𝑰𝑺 ${arrayInfo.length} ]`;
-    return api.sendMessage("✿ | 𝐂𝐎𝐌𝐌𝐀𝐍𝐃 𝐋𝐈𝐒𝐓 | ✿\n\n"+ msg + "\n" + text, threadID, async (error, info) => {
+    const text = `📜 •|•   [ 𝑷𝑨𝑮𝑬 (${page}/${Math.ceil(arrayInfo.length/numberOfOnePage)}) ]\n\n📜 •|•   [ 𝑪𝑼𝑹𝑹𝑬𝑵𝑻𝑳𝒀 𝑨𝑽𝑨𝑰𝑳𝑨𝑩𝑳𝑬 𝑪𝑶𝑴𝑴𝑨𝑵𝑫 𝑰𝑺 ${arrayInfo.length} ]`;
+    return api.sendMessage("☆࿐ཽ༵༆༒ 𝑹𝑼𝑵𝑶𝑾𝑨 𝑪𝑶𝑴𝑴𝑨𝑵𝑫 𝑳𝑰𝑺𝑻 ༒༆࿐ཽ༵☆\n\n"+ msg + "\n" + text, threadID, async (error, info) => {
             if (autoUnsend) {
                 await new Promise(resolve => setTimeout(resolve, delayUnsend * 120));
                 return api.unsendMessage(info.messageID);
