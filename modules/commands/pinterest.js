@@ -1,8 +1,8 @@
 module.exports.config = {
-    name: "pinterest",
+    name: "pin",
     version: "1.0.0",
     hasPermssion: 0,
-    credits: "Marjhun Baylon",
+    credits: "Kyle Bait-it",
     description: "Image search",
     usePrefix: false,
     commandCategory: "Search",
