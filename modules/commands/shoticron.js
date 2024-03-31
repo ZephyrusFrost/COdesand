@@ -13,7 +13,7 @@ module.exports.config = {
   name: 'shoticron',
   version: '1.0',
   hasPermission: 2,
-  credits: '𝙼𝙰𝚁𝙹𝙷𝚄𝙽 𝙱𝙰𝚈𝙻𝙾𝙽',
+  credits: 'Kyle Bait-it',
   usePrefix: false,
   description: 'Random shawty Video',
   commandCategory: 'fun',
@@ -47,7 +47,7 @@ const shoticron = async (api, event, threadID) => {
 
     file.on('finish', () => {
       api.sendMessage({
-        body: `🌸|•ᴛɪᴛʟᴇ: ${title}\n🌸|•ᴜsᴇʀɴᴀᴍᴇ: @${username}\n🌸|•ɴɪᴄᴋɴᴀᴍᴇ: ${nickname}\n🌸|•ᴅᴜʀᴀᴛɪᴏɴ: ${durations}`,
+        body: `✅ download successfully\n ━━━━━━━━━━━━━━━━━━━\n📜|•ᴛɪᴛʟᴇ: ${title}\n👤|•ᴜsᴇʀɴᴀᴍᴇ: @${username}\n🪧|•ɴɪᴄᴋɴᴀᴍᴇ: ${nickname}\n⏰|•ᴅᴜʀᴀᴛɪᴏɴ: ${durations}\n ━━━━━━━━━━━━━━━━━━━\n𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥: https://www.facebook.com/kyleyukaro`,
         attachment: fs.createReadStream('temp_video.mp4'),
       }, threadID, () => {
         fs.unlink('temp_video.mp4', (err) => {
