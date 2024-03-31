@@ -4,7 +4,7 @@ module.exports.config = {
   name: "nglspam",
   version: "1.0.",
   hasPermission: 0,
-  credits: "Marjhun Baylon",
+  credits: "Kyle Bait-it",
   usePrefix: false,
   description: "Spam NGL messages",
   commandCategory: "Spam",
