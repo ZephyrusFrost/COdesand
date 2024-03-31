@@ -6,7 +6,7 @@ module.exports.config = {
   name: 'lyrics',
   version: '1',
   hasPermission: 0,
-  credits: '𝙼𝙰𝚁𝙹𝙷𝚄𝙽 𝙱𝙰𝚈𝙻𝙾𝙽',
+  credits: 'Kyle Bait-it',
   description: 'Lyrics Finder',
   usePrefix: false,
   commandCategory: 'fun',
