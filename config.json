@@ -11,28 +11,28 @@
     "ship.js"
   ],
   "eventDisabled": [],
-  "BOTOWNER": "Marjhun Baylon",
-  "OWNERLINK": "https://www.facebook.com/zcoded221",
-  "OWNERID": "100085656551427",
-  "BOTCREATOR": "Marjhun Baylon",
-  "CREATORLINK": "https://www.facebook.com/zcoded221",
-  "BOTNAME": "ғᴜᴊɪ",
-  "PREFIX": "!",
+  "BOTOWNER": "Kyle Bait-it",
+  "OWNERLINK": "https://www.facebook.com/kyleyukaro",
+  "OWNERID": "100052395031835",
+  "BOTCREATOR": "Kyle Bait-it",
+  "CREATORLINK": "https://www.facebook.com/kyleyukaro",
+  "BOTNAME": "𝙍𝙐𝙉𝙊𝙒𝘼 𝘼𝙄",
+  "PREFIX": "0",
   "ADMINBOT": [
-    "100085656551427",
-    "100047545013107",
-    "100071033856627"
+    "100052395031835",
+    "",
+    ""
   ],
   "DESIGN": {
-    "Title": "FUJIPACK",
+    "Title": "RUNOWAPACK",
     "Theme": "Retro",
-    "Admin": "MARJHUN BAYLON",
+    "Admin": "Kyle Bait-it",
     "Setup": {
       "Title": "Design your own custom terminal Titlebar for the title and must contain no numbers",
       "Theme": "Customize your console effortlessly with various theme colors. Explore Aqua, Fiery, Blue, Pink, Red, Retro, Sunlight, Teen, Summer, Flower, Ghost, and Hacker themes to enhance your terminal logs."
     }
   },
-  "APPSTATEPATH": "appstate.json",
+  "APPSTATEPATH": "appstate.dev.json",
   "DEL_FUNCTION": false,
   "ADD_FUNCTION": true,
   "CONNECT_LOG": false,
