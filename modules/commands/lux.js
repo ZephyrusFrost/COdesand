@@ -4,7 +4,7 @@ module.exports.config = {
   name: "lux",
   version: "1.0.0",
   hasPermission: 0,
-  credits: "Marjhun Baylon",
+  credits: "Kyle Bait-it",
   description: "lux ai with picture generated",
   commandCategory: "lux-ai",
   usages: "[ask]",
@@ -32,20 +32,20 @@ const manilaTime = DateTime.now().setZone("Asia/Manila").toFormat("yyyy-MM-dd hh
   args.shift();
 
   if (!args[0]) {
-    api.sendMessage("🌸 | ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇsᴛɪᴏɴ ᴛᴏ ʙᴇ ᴀɴsᴡᴇʀᴇᴅ", threadID, messageID);
+    api.sendMessage("⚠️ | ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ǫᴜᴇsᴛɪᴏɴ ᴛᴏ ʙᴇ ᴀɴsᴡᴇʀᴇᴅ", threadID, messageID);
     return;
   }
 
   const query = args.join(" ");
 
   if (query === lastQuery) {
-    api.sendMessage("🌸 | ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ǫᴜᴇsᴛɪᴏɴ ɪs ᴅᴏɴᴇ ᴛᴏ ᴀɴsᴡᴇʀ ᴘʟᴇᴀsᴇ ʙᴀᴄᴋ ʀᴇᴀᴅ", threadID, messageID);
+    api.sendMessage("✅ | ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ ǫᴜᴇsᴛɪᴏɴ ɪs ᴅᴏɴᴇ ᴛᴏ ᴀɴsᴡᴇʀ ᴘʟᴇᴀsᴇ ʙᴀᴄᴋ ʀᴇᴀᴅ", threadID, messageID);
     return;
   } else {
     lastQuery = query;
   }
 
-   api.sendMessage("✨ | ɢᴇɴᴇʀᴀᴛɪɴɢ ʀᴇsᴘᴏɴsᴇ ᴛᴏ ʏᴏᴜʀ ǫᴜᴇsᴛɪᴏɴ", threadID, messageID);
+   api.sendMessage("♻️ | ɢᴇɴᴇʀᴀᴛɪɴɢ ʀᴇsᴘᴏɴsᴇ ᴛᴏ ʏᴏᴜʀ ǫᴜᴇsᴛɪᴏɴ", threadID, messageID);
 
   try {
     const response = await axios.get(`https://hazeyy-api-blackbox.kyrinwu.repl.co/ask?q=${encodeURIComponent(query)}`);
@@ -56,7 +56,7 @@ const manilaTime = DateTime.now().setZone("Asia/Manila").toFormat("yyyy-MM-dd hh
     setTimeout(function() {
      api.setMessageReaction("✅", event.messageID, (err) => {}, true);
       return api.sendMessage({ body: 
-    `🧠 ʟᴜx ᴀɴsᴡᴇʀ\n\n📝:${formattedAnswer}\n\n✿━━━━━━━━━━━━━━━━━━✿\n🌸|• ᴄᴏᴍᴍᴀɴᴅ [ ʟᴜx ] ᴇxᴇᴄᴜᴛᴇᴅ ᴛɪᴍᴇ :\n${manilaTime}`, attachment: imgData }, threadID, messageID);
+    `🧠 ʟᴜx ᴀɴsᴡᴇʀ\n\n📝:${formattedAnswer}\n\n━━━━━━━━━━━━━━━━━━\n🕒|• ᴄᴏᴍᴍᴀɴᴅ [ ʟᴜx ] ᴇxᴇᴄᴜᴛᴇᴅ ᴛɪᴍᴇ :\n${manilaTime}`, attachment: imgData }, threadID, messageID);
     }, 5000);
 
     } else {
