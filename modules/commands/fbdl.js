@@ -4,7 +4,7 @@ module.exports.config = {
   name: 'fbdl',
   version: '1.0.0',
   hasPermission: 0,
-  credits: 'Marjhun Baylon',
+  credits: 'Kyle Bait-it',
   usePrefix: false,
   description: 'Download and send a Facebook video',
   commandCategory: 'Utility',
